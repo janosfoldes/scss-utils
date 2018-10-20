@@ -1,0 +1,12 @@
+// TEXT
+// ====
+
+// Wrap
+// ----
+
+@mixin wrap() {
+    -ms-word-break: break-all;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    word-wrap: break-word;
+}

@@ -1,0 +1,46 @@
+// LISTS
+// =====
+
+// Custom List
+// -----------
+
+@mixin custom-list($indent: 1.5rem, $size:1rem, $align:center, $color: null, $weight:null, $radius:null, $background:null, $border:null, $offset-y:null, $counter:null, $symbol:"\2022", $gutter-x: .5rem) {
+    @if $counter != 'none' {
+        counter-reset: $counter;
+    }
+    list-style: none;
+    margin-left: 0;
+    li {
+        margin-left: $indent + $gutter-x;
+        // min-height: $size;
+        position: relative;
+        &:before {
+            @include set(background, $background);
+            @include set(border, $border);
+            box-sizing: content-box;
+            @include set(color, $color);
+            @if $counter != null {
+                content: counter($counter) $symbol;
+                counter-increment: $counter;
+            } @else {
+                content: $symbol;
+            }
+            display: inline-block;
+            font-size: $size;
+            @include set(font-weight, $weight);
+            left: -$indent - $gutter-x;
+            position: absolute;
+            border-radius: $radius;
+            text-align: $align;
+            @include set(top, $offset-y);
+            width: $indent;
+        }
+    }
+}
+
+// Custom Ordered List
+// -------------------
+
+@mixin custom-ol($indent: 1.5rem, $size:1rem, $align:right, $color:null, $weight:null, $radius:null, $background:null, $border:null, $offset-y:null, $symbol:".", $counter:olc, $gutter-x: .5rem) {
+    @include custom-list($indent, $size, $align, $color, $weight, $radius, $background, $border, $offset-y, $counter, $symbol, $gutter-x);
+}

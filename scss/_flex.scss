@@ -1,0 +1,23 @@
+// FLEX
+// ====
+
+// Constants
+// ---------
+
+$FLEX-ALIGNS: (
+    bottom: flex-end,
+    center: center,
+    left: flex-start,
+    middle: center,
+    right: flex-end,
+    top: flex-start
+);
+
+// Layout
+// ------
+
+@mixin flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

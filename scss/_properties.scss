@@ -1,0 +1,76 @@
+// PROPERTIES
+// ==========
+
+// Create Properties
+// -----------------
+
+@mixin create-properties($settings, $properties) {
+    @each $group-name, $group in $settings {
+        @include breakpoint(map-get($group, breakpoint)) {
+            @each $name, $value in $properties {
+                #{$name}: map-get($group, $value);
+            }
+        }
+    }
+}
+
+// Return bottom (margin or padding) from list $list
+// -------------------------------------------------
+
+@function get-bottom($list) {
+    @if length($list) >= 3 {
+        @return nth($list, 3);
+    }
+    @if length($list) >= 1 {
+        @return nth($list, 1);
+    }
+    @return null;
+}
+
+// Return left (margin or padding) from list $list
+// -----------------------------------------------
+
+@function get-left($list) {
+    @if length($list) >= 4 {
+        @return nth($list, 4);
+    }
+    @if length($list) >= 2 {
+        @return nth($list, 2);
+    }
+    @if length($list) >= 1 {
+        @return nth($list, 1);
+    }
+    @return null;
+}
+
+// Return right (margin or padding) from list $list
+// ------------------------------------------------
+
+@function get-right($list) {
+    @if length($list) >= 2 {
+        @return nth($list, 2);
+    }
+    @if length($list) == 1 {
+        @return nth($list, 1);
+    }
+    @return null;
+}
+
+// Return top (margin or padding) from list $list
+// ----------------------------------------------
+
+@function get-top($list) {
+    @if length($list) >= 1 {
+        @return nth($list, 1);
+    }
+    @return null;
+}
+
+// Set the $property property to $value, if the $value is not null
+// ---------------------------------------------------------------
+
+@mixin set($property, $value) {
+    @if $value != null {
+        #{$property}: $value;
+    }
+}

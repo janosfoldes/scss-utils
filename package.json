@@ -1,0 +1,24 @@
+{
+  "name": "scss-utils",
+  "version": "0.1.0",
+  "description": "SCSS utilities, helper mixins and functions",
+  "main": "scss-utils.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janosfoldes/scss-utils.git"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "utils",
+    "utilities",
+    "helpers",
+    "mixins",
+    "functions"
+  ],
+  "author": "János Földes",
+  "license": "MIT"
+}

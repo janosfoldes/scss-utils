@@ -1,0 +1,10 @@
+// ANIMATION
+// =========
+
+@mixin transition($properties...) {
+    $list: ();
+    @each $property in $properties {
+        $list: append($list, $property $global-transition-duration $global-transition-timing, comma);
+    }
+    transition: $list;
+}

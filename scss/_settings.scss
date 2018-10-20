@@ -1,0 +1,13 @@
+// SETTINGS
+// ========
+
+// Return $name setting's value from the setting group $group of settings $settings
+// --------------------------------------------------------------------------------
+
+@function get-setting($setting, $group, $name) {
+    @if is-number($name) {
+        @return nth(map-get($setting, $group), $name);
+    } @else {
+        @return map-get(map-get($setting, $group), $name);
+    }
+}

@@ -1,0 +1,15 @@
+// SHAPES
+// ======
+
+// Rounded
+// -------
+
+@mixin rounded($size, $border-radius:50%, $horizontal-align:center, $vertical-align:middle) {
+    align-items: map-get($FLEX-ALIGNS, $vertical-align);
+    border-radius: $border-radius;
+    display: flex;
+    height: $size;
+    justify-content: map-get($FLEX-ALIGNS, $horizontal-align);
+    line-height: $size;
+    width: $size;
+}
