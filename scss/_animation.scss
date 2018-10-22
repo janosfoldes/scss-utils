@@ -1,6 +1,9 @@
 // ANIMATION
 // =========
 
+$global-transition-duration: .4s !default;
+$global-transition-timing: ease-in-out !default;
+
 @mixin transition($properties...) {
     $list: ();
     @each $property in $properties {
