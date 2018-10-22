@@ -1,6 +1,6 @@
 {
   "name": "@janosfoldes/scss-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SCSS utilities, helper mixins and functions",
   "main": "scss-utils.scss",
   "scripts": {
